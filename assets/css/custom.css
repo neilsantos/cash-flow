@@ -1,3 +1,25 @@
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#da5e3f; 
+  text-decoration:none; 
+  cursor:pointer;  
+}
+
+
+.in {
+  color: #017e15;
+  text-decoration: none;
+}
+.out{
+  color: #a30505;
+  text-decoration: none;
+}
+
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;

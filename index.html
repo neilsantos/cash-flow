@@ -24,55 +24,48 @@
     <main>
       <!-- CABEÇALHO DA PAGINA -->
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="./assets/_img/icon.png" alt="" width="80" height="72">
+        <img class="d-block mx-auto mb-4" src="./assets/_img/cash-flow-icon.svg" alt="" width="80" height="72">
         <h2>Fluxo de Caixa</h2>
         <p class="lead">Esta página irá calcular o saldo resultante do caixa após o dia de operação</p>
       </div>
 
       <div class="row g-5">
 
-        <!-- RESUMO -->
+        <!-- Left Column -->
         <div class="col-md-5 col-lg-4 order-md-last">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="">Resumo</span>
-            <!-- <span class="badge bg-primary rounded-pill">3</span> -->
           </h4>
-          <ul class="list-group mb-3">
+          <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
+                <!-- <h6 class="my-0 text-success"><small><span class="badge bg-success rounded-pill">14</span></small>&nbsp;&nbsp;Entradas</h6> -->
                 <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
-                <!-- <small class="text-muted">Brief description</small> -->
               </div>
-              <span class="text-muted ">R$ 12</span>
+              <span class="text-muted">R$ 12</span>
+              
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
+                
                 <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas</h6>
-                <!-- <small class="text-muted">Brief description</small> -->
+                <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
               </div>
+              
               <span class="text-muted">R$ 8</span>
             </li>
-
-            <!-- <li class="list-group-item d-flex justify-content-between">
-              <span>Total (BRL)</span>
-              <strong>R$20</strong>
-            </li> -->
           </ul>
-
-          <ul class="list-group mb-3">
+          <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">Total</h6>
-                <!-- <small class="text-muted">Brief description</small> -->
               </div>
               <span class="text-muted ">R$ 12</span>
             </li>
-
           </ul>
+        </div><!-- Left Column -->
 
-        </div>
-
-        <!-- Middle of the Page -->
+        <!-- Right Column -->
         <div class="col-md-7 col-lg-8">
 
           <h4 class="mb-3">Movimentação</h4>
@@ -81,71 +74,160 @@
             <div class="row g-3">
 
               <div class="col-sm-3">
-                <!-- <label for="country" class="form-label">Modo</label> -->
-                <select class="form-select" id="country" required>
+                <select class="form-select" required>
                   <option value="">Escolha</option>
                   <option>Entrada</option>
                   <option>Saída</option>
                 </select>
-                <!-- <div class="invalid-feedback">
-                  Obrigatório
-                </div> -->
               </div>
 
-              <div class="col-sm-4">
-                <!-- <label for="firstName" class="form-label">Descrição</label> -->
-                <input type="text" class="form-control" id="firstName" placeholder="Descrição" value="" required>
-                <!-- <div class="invalid-feedback">
-                  Obrigatório
-                </div> -->
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="description" placeholder="Descrição" value="" required>
+                <!-- ALERT EXEMPLE <div class="invalid-feedback text-center"><small>Obrigatório</small></div> -->
               </div>
 
               <div class="col-sm-3">
-                <!-- <label for="lastName" class="form-label">Valor</label> -->
                 <input type="currency" class="form-control" placeholder="Valor" value="" required>
-                <!-- <div class="invalid-feedback">
-                  Obrigatório
-                </div> -->
               </div>
 
-              <div class="col-sm-2">
-                <!-- <label for="lastName" class="form-label">&nbsp;</label><br> -->
-
-                <button class=" btn btn-primary btn" type="submit">Registrar</button>
-
-
+              <div class="col-sm-1">
+                <button onclick="register()" class="btn btn-primary btn"><i class="bi bi-arrow-down-circle"></i></button>
               </div>
-
-
-
-
-
-
           </form>
 
-        </div>
+        </div><!-- /Right Column -->
 
         <div>
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">&nbsp;</th>
+                <th scope="col">Data e Hora</th>
                 <th scope="col">Decrição</th>
                 <th scope="col">Valor</th>
+                <th scope="col">&nbsp;</th>
+
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row"><i class="bi bi-arrow-down-square-fill"></i></th>
+                <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
                 <td>Venda do Estoque</td>
                 <td>500,00</td>
-                <td><i class="bi bi-trash-fill"></i></td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
               </tr>
               <tr>
-                <th scope="row"><i class="bi bi-arrow-up-square-fill"></i></th>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
                 <td>Pagamento Aluguel</td>
                 <td>350,00</td>
-                <td><i class="bi bi-trash-fill"></i></td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+              </tr>
+
+              <tr>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
+                <td>Pagamento Aluguel</td>
+                <td>350,00</td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+              </tr>
+
+              <tr>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
+                <td>Pagamento Aluguel</td>
+                <td>350,00</td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+              </tr>
+
+              <tr>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
+                <td>Pagamento Aluguel</td>
+                <td>350,00</td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+              </tr>
+
+              <tr>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
+                <td>Pagamento Aluguel</td>
+                <td>350,00</td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+              </tr>
+
+              <tr>
+                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                <td>17/08/22 - 17:57</td>
+                <td>Pagamento Aluguel</td>
+                <td>350,00</td>
+                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
+                <tr>
+                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                  <td>17/08/22 - 17:57</td>
+                  <td>Pagamento Aluguel</td>
+                  <td>350,00</td>
+                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                </tr>
+
               </tr>
 
             </tbody>
@@ -157,6 +239,48 @@
       </div>
     </main>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <!-- <h6 class="my-0 text-success"><small><span class="badge bg-success rounded-pill">14</span></small>&nbsp;&nbsp;Entradas</h6> -->
+            <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
+          </div>
+          <span class="text-muted">R$ 12</span>
+          
+        </li>
+      </ul>
+    </div>
+      <div class="col-md-4">
+        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                
+              <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas</h6>
+              <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
+
+              
+            </div>
+            
+            <span class="text-muted">R$ 8</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Total</h6>
+            </div>
+            <span class="text-muted ">R$ 12</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; FATEC ASSIS 2022</p>
     </footer>
@@ -164,8 +288,18 @@
 
 
   <!-- bootstrap framework -->
-  <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
   <script src="form-validation.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <!-- custom js -->
+  <script src="./assets/js/custom.js"></script>
+  <!-- <script>
+    $("#insert-btn").click(function(){
+        alert("ok")
+    })
+  </script> -->
 
 </body>
 
