@@ -19,6 +19,33 @@ a:hover {
   text-decoration: none;
 }
 
+.my-badge-credit {
+  background-color: rgb(221, 113, 24);
+  color: white;
+  font-size: 11px;
+  font-style: normal;   
+  padding: 2px 8px;
+  text-align: center;
+  border-radius: 3px;
+}
+.my-badge-transfer {
+  background-color: rgb(7, 105, 170);
+  color: white;
+  font-size: 11px;
+  font-style: normal;   
+  padding: 2px 8px;
+  text-align: center;
+  border-radius: 3px;
+}
+.my-badge-money {
+  background-color: rgb(54, 153, 8);
+  color: white;
+  font-size: 11px;
+  font-style: normal;   
+  padding: 2px 8px;
+  text-align: center;
+  border-radius: 3px;
+}
 
 .bd-placeholder-img {
     font-size: 1.125rem;
