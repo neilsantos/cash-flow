@@ -20,8 +20,12 @@
 
 <body class="bg-light">
 
+
   <div class="container">
     <main>
+
+
+
       <!-- CABEÇALHO DA PAGINA -->
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="./assets/_img/cash-flow-icon.svg" alt="" width="80" height="72">
@@ -43,15 +47,15 @@
                 <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
               </div>
               <span class="text-muted">R$ 12</span>
-              
+
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
-                
+
                 <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas</h6>
                 <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
               </div>
-              
+
               <span class="text-muted">R$ 8</span>
             </li>
           </ul>
@@ -65,6 +69,8 @@
           </ul>
         </div><!-- Left Column -->
 
+
+
         <!-- Right Column -->
         <div class="col-md-7 col-lg-8">
 
@@ -74,10 +80,10 @@
             <div class="row g-3">
 
               <div class="col-sm-3">
-                <select class="form-select" required>
-                  <option value="">Escolha</option>
-                  <option>Entrada</option>
-                  <option>Saída</option>
+                <select id="mode" class="form-select" required>
+                  <option disabled selected value>Escolha</option>
+                  <option value="in">Entrada</option>
+                  <option value="out">Saída</option>
                 </select>
               </div>
 
@@ -87,199 +93,206 @@
               </div>
 
               <div class="col-sm-3">
-                <input type="currency" class="form-control" placeholder="Valor" value="" required>
+                <input class="form-control" id="amount" placeholder="Valor" value="" required>
               </div>
 
               <div class="col-sm-1">
-                <button onclick="register()" class="btn btn-primary btn"><i class="bi bi-arrow-down-circle"></i></button>
+                <button type="button" onclick="register()" class="btn btn-primary btn"><i
+                    class="bi bi-arrow-down-circle"></i></button>
               </div>
           </form>
+          <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+            <!-- Position it -->
+            <div style="position: absolute; top: 0; right: 0;">
 
-        </div><!-- /Right Column -->
-
-        <div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">&nbsp;</th>
-                <th scope="col">Data e Hora</th>
-                <th scope="col">Decrição</th>
-                <th scope="col">Valor</th>
-                <th scope="col">&nbsp;</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Venda do Estoque</td>
-                <td>500,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-              </tr>
-
-              <tr>
-                <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                <td>17/08/22 - 17:57</td>
-                <td>Pagamento Aluguel</td>
-                <td>350,00</td>
-                <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-                <tr>
-                  <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
-                  <td>17/08/22 - 17:57</td>
-                  <td>Pagamento Aluguel</td>
-                  <td>350,00</td>
-                  <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
+              <!-- Then put toasts within -->
 
 
+            </div><!-- /Right Column -->
 
-      </div>
+            <div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">Data e Hora</th>
+                    <th scope="col">Decrição</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">&nbsp;</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Venda do Estoque</td>
+                    <td>500,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row"><i class="out bi bi-arrow-up-square-fill"></i></th>
+                    <td>17/08/22 - 17:57</td>
+                    <td>Pagamento Aluguel</td>
+                    <td>350,00</td>
+                    <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                  </tr>
+
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+
+
+          </div>
     </main>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
-        <li class="list-group-item d-flex justify-content-between lh-sm">
-          <div>
-            <!-- <h6 class="my-0 text-success"><small><span class="badge bg-success rounded-pill">14</span></small>&nbsp;&nbsp;Entradas</h6> -->
-            <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
-          </div>
-          <span class="text-muted">R$ 12</span>
-          
-        </li>
-      </ul>
-    </div>
-      <div class="col-md-4">
-        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-                
-              <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas</h6>
-              <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <!-- <h6 class="my-0 text-success"><small><span class="badge bg-success rounded-pill">14</span></small>&nbsp;&nbsp;Entradas</h6> -->
+                <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
+              </div>
+              <span class="text-muted">R$ 12</span>
 
-              
-            </div>
-            
-            <span class="text-muted">R$ 8</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Total</h6>
-            </div>
-            <span class="text-muted ">R$ 12</span>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+
+                <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas</h6>
+                <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
+
+
+              </div>
+
+              <span class="text-muted">R$ 8</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Total</h6>
+              </div>
+              <span class="text-muted ">R$ 12</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; FATEC ASSIS 2022</p>
