@@ -1,21 +1,16 @@
 function register() {
 
-    mode = document.getElementById("mode").value;
-    description = document.getElementById("description").value;
-    amount = document.getElementById("amount").value;
+    let item = {
+        
+        modo: $("#mode").val(),
+        amount: $("#amount").val(),
+        description: $("#description").val(),
+        datetime : new Date().toLocaleString(),
+        type : $("#type").val()
 
-    if (mode || amount || description != "") {
-        console.log('Muito bem!')
-    } else {
-        console.log("Você precisa preencher os campos")
-        Toasty();
+       };
+       console.log(item)
 
-
-
-    }
-    console.log(mode)
-    console.log(description)
-    console.log(amount)
 }
 
 function formatarMoeda() {
@@ -35,3 +30,23 @@ function formatarMoeda() {
     elemento.value = valor;
     if(valor == 'NaN') elemento.value = '';
 }
+
+
+// (() => {
+//     const forms = document.querySelectorAll('.validar')
+//     var register = document.getElementById('register-btn')
+  
+//     // Loop over them and prevent submission
+//     Array.from(forms).forEach(form => {
+//       register.addEventListener('click', event => {
+//         console.log('ok')
+//         if (!form.checkValidity()) {
+//           event.preventDefault()
+//           event.stopPropagation()
+//         }
+  
+//         form.classList.add('was-validated')
+//       }, false)
+//     })
+//   })()
+  

@@ -23,7 +23,7 @@
   <!-- bootstrap, jQuery framework -->
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="form-validation.js"></script>
+  <!-- <script src="form-validation.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
@@ -50,7 +50,7 @@
                     
                     <h4 class=" mb-3">Movimentação</h4>
 
-                    <form id="form">
+                    <form class="validar" novalidate>
                         <div class="row">
 
                              <div class="col-md-2">
@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <input type="text" class="form-control" id="description" placeholder="Descrição"
+                                <input type="text" class="form-control" id="description" id="validationDefaultUsername"  placeholder="Descrição"
                                     value="" required>
                             </div>
                           
@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="col-md-2">
-                              <select  class="form-select" required>
+                              <select id="type"  class="form-select" required>
                                   <option disabled selected value>Tipo</option>
                                   <option value="credit">Crédito</option>
                                   <option value="money">Dinheiro</option>
@@ -82,7 +82,7 @@
                               </select>
                           </div>
                             <div class="col-md-1">
-                                <button type="button" onclick="register()" class="btn btn-primary btn"><i
+                                <button type="button" id="register-btn" onclick="register()" class="btn btn-primary btn"><i
                                         class="bi bi-arrow-down-circle"></i></button>
                             </div> 
                         </div>
@@ -106,26 +106,26 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
-                              <td ><i class="my-badge-money">Dinheiro</i></td>
+                              <th scope="row">E</th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
                               <td>17/08/22 - 17:57</td>
                               <td>Venda do Estoque</td>
-                              <td>500,00</td>
+                              <td><i class=" in bi bi-arrow-down-square-fill"></i> &nbsp;500,00</td>
                               <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
                             </tr>
                             
                             <tr>
-                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
-                              <td ><i class="my-badge-credit">Crédito</i></th>
+                              <th scope="row">S</th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
                               <td>17/08/22 - 17:57</td>
                               <td>Venda do Estoque</td>
-                              <td>500,00</td>
+                              <td><i class=" out bi bi-arrow-up-square-fill"></i> &nbsp;500,00</td>
                               <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
                             </tr>
 
                             <tr>
                               <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
-                              <td><i class="my-badge-transfer">Pix</i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
                               <td>17/08/22 - 17:57</td>
                               <td>Venda do Estoque</td>
                               <td>500,00</td>
@@ -134,12 +134,442 @@
           
                             <tr>
                               <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
-                              <td><i class="my-badge-money">Dinheiro</i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
                               <td>17/08/22 - 17:57</td>
                               <td >Venda do Estoque</td>
                               <td>500,00</td>
                               <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
                             </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr><tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-success">Dinheiro</span></td>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td ><span class="badge bg-danger">Crédito</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row"><i class=" in bi bi-arrow-down-square-fill"></i></th>
+                              <td><span class="badge bg-primary">Pix</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td>Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+          
+                            <tr>
+                              <th scope="row"><i class=" out bi bi-arrow-up-square-fill"></i></th>
+                              <td><span class="badge bg-success ">Dinheiro</span></th>
+                              <td>17/08/22 - 17:57</td>
+                              <td >Venda do Estoque</td>
+                              <td>500,00</td>
+                              <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                            
           
                           </tbody>
                         </table>
