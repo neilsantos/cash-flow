@@ -1,7 +1,6 @@
 $(function () {
-  $("#garbage").on("click", function () {
-    console.log("Handler for .click() called.");
-
+  $("#table-body").on("click", ".garbage", function(){
+    console.log('Clicked')
   });
 });
 
@@ -147,9 +146,9 @@ function drawTableLine(movimento) {
   amount_i.setAttribute('style', 'font-style: normal;')
 
   var garbage_a = document.createElement('a')
-  garbage_a.setAttribute('class', 'bi bi-trash-fill')
+  garbage_a.setAttribute('class', 'bi bi-trash-fill garbage')
 
-  garbage_a.setAttribute('id', 'garbage')
+  // garbage_a.setAttribute('class', '')
 
   type_td.appendChild(type_span)
   amount_td.appendChild(amount_i)
