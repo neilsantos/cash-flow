@@ -16,8 +16,6 @@
   <!-- custom style -->
   <link href="./assets/css/custom.css" rel="stylesheet">
 
-
-
   <!-- Scripts -->
 
   <!-- bootstrap, jQuery framework -->
@@ -30,13 +28,9 @@
   <!-- custom js -->
   <script src="./assets/js/custom.js"></script>
 
-
-
 </head>
 
 <body class="bg-light">
-
-
   <div class="container-fluid p-5">
     <main>
       <div class="py-2 text-center">
@@ -47,7 +41,6 @@
       <div class="row p-3">
         <div class="shadow-sm d-flex flex-row-reverse card border-0">
           <div class="p-2">
-            <!-- <input class="form-control" id="amount" placeholder="Valor" value="" required onchange="formatarMoeda()"> -->
             <input type="text" id="initial" autocomplete="off" placeholder="R$" class="form-control"
               onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" onchange="formatarMoeda()">
 
@@ -61,8 +54,8 @@
 
             <h4 class=" mb-3">Movimentação</h4>
 
-            <form class="validar" novalidate>
-              <div class="row">
+            <form>
+              <div id="movimento" class="row">
 
                 <div class="col-md-2">
                   <select id="mode" class="form-select" required>
@@ -77,12 +70,9 @@
                     autocomplete="off" placeholder="Descrição" value="" required>
                 </div>
 
-
                 <div class="col-md-2">
-                  <!-- <input class="form-control" id="amount" placeholder="Valor" value="" required onchange="formatarMoeda()"> -->
                   <input type="text" id="amount" autocomplete="off" placeholder="R$" class="form-control"
                     onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" onchange="formatarMoeda()">
-
                 </div>
 
                 <div class="col-md-2">
@@ -98,8 +88,6 @@
                       class="bi bi-arrow-down-circle"></i></button>
                 </div>
               </div>
-
-
             </form>
 
             <div id="tableDiv" class="mt-5">
@@ -107,8 +95,7 @@
                 <thead>
                   <tr>
                     <th scope="col">&nbsp;</th>
-                    <th scope="col">Modo</th>
-
+                    <th scope="col">Tipo</th>
                     <th scope="col">Hora</th>
                     <th scope="col">Decrição</th>
                     <th scope="col">Valor</th>
@@ -117,7 +104,8 @@
                   </tr>
                 </thead>
                 <tbody id="table-body">
-                  <tr>
+
+                  <!-- <tr>
                     <th scope="row">1</th>
                     <td><span class="badge bg-success">Dinheiro</span></td>
                     <td>17:57</td>
@@ -151,10 +139,7 @@
                     <td>Venda do Estoque</td>
                     <td><i class=" out bi bi-arrow-up-square-fill"></i> &nbsp;500,00</td>
                     <td><a href="#"><i class="bi bi-trash-fill"></i></a></td>
-                  </tr>
-
-
-
+                  </tr> -->
 
                 </tbody>
               </table>
@@ -163,7 +148,6 @@
         </div>
 
         <div class="col-md-4 ">
-
           <div class="sticky-top">
             <div>
               <h4 class=" mb-3">
@@ -172,15 +156,15 @@
               <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <h6 class="my-0">Cartão de Crédito</h6>
-                  <span class="text-muted ">R$ 695,35</span>
+                  <span id="totalOfCredit" class=" badge rounded-pill bg-info text-dark">0</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <h6 class="my-0">Dinheiro</h6>
-                  <span class="text-muted ">R$ 1982,33</span>
+                  <span id="totalOfMoney" class=" badge rounded-pill bg-info text-dark">0</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <h6 class="my-0">Pix</h6>
-                  <span class="text-muted ">R$ 879,00</span>
+                  <span id="totalOfTransfer" class=" badge rounded-pill bg-info text-dark">0</span>
                 </li>
               </ul>
               <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
@@ -188,18 +172,15 @@
                   <div>
                     <h6 class="my-0 text-success"><i class="bi bi-arrow-down-square-fill"></i>&nbsp;&nbsp;Entradas</h6>
                   </div>
-                  <span class="text-muted">R$ 3.556,68</span>
+                  <span id='amount_in' class="text-muted">-</span>
 
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-
                     <h6 class="my-0 text-"><i class="bi bi-arrow-up-square-fill"></i>&nbsp;&nbsp;Saídas
                     </h6>
-                    <!-- <h6 class="my-0 text"><small><span class="badge bg-danger rounded-pill">5</span></small>&nbsp;&nbsp;Saídas</h6> -->
                   </div>
-
-                  <span class="text-muted">R$ 175,80</span>
+                  <span id='amount_out' class="text-muted">-</span>
                 </li>
               </ul>
               <ul class="list-group mb-3 shadow-sm p-3 bg-white rounded">
@@ -207,23 +188,19 @@
                   <div>
                     <h6 class="my-0">Total</h6>
                   </div>
-                  <span class="text-muted ">R$ 3.556,68</span>
+                  <span id='total' class="text-muted ">-</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
                     <h6 class="my-0">Total em Caixa</h6>
                   </div>
-                  <span class="text-muted ">R$ 1.806,53</span>
+                  <span id='totalInCash' class="text-muted ">-</span>
                 </li>
               </ul>
-
             </div>
-
           </div>
         </div>
       </div>
-
-
     </main>
   </div>
 </body>
