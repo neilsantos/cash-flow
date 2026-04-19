@@ -1,0 +1,32 @@
+{
+  "name": "cash-flow",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "main": "next.config.mjs",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilsantos/cash-flow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neilsantos/cash-flow/issues"
+  },
+  "homepage": "https://github.com/neilsantos/cash-flow#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "lucide-react": "^1.8.0",
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.2"
+  }
+}
