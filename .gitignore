@@ -1,5 +1,8 @@
 .next
 node_modules
+.env.local
+docker-compose.yml
 data/*.sqlite
 data/*.sqlite-*
 *.log
+steps.bat

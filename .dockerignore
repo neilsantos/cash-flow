@@ -1,0 +1,13 @@
+.git
+.next
+node_modules
+npm-debug.log*
+next-*.log
+*.log
+.env
+.env.*
+data/*.sqlite
+data/*.sqlite-*
+Dockerfile
+.dockerignore
+docker-compose.yml

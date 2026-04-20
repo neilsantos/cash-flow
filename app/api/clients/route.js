@@ -21,6 +21,7 @@ export async function POST(request) {
       name,
       phone: String(body.phone || "").trim(),
       email: String(body.email || "").trim(),
+      vehiclePlate: String(body.vehiclePlate || "").trim().toUpperCase(),
     }),
   });
 }

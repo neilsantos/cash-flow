@@ -41,7 +41,7 @@ export function CashDayClient({ clients, initialData, date }) {
     }
 
     return clients.filter((client) =>
-      [client.name, client.phone, client.email]
+      [client.name, client.phone, client.email, client.vehicle_plate]
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query))
     );
@@ -206,7 +206,7 @@ export function CashDayClient({ clients, initialData, date }) {
                 autoFocus
                 className="h-12 min-w-0 flex-1 bg-transparent text-zinc-950 outline-none placeholder:text-zinc-400"
                 onChange={(event) => setClientSearch(event.target.value)}
-                placeholder="Pesquisar por nome, telefone ou e-mail"
+                placeholder="Pesquisar por nome, telefone, e-mail ou placa"
                 value={clientSearch}
               />
             </div>
@@ -248,7 +248,9 @@ export function CashDayClient({ clients, initialData, date }) {
                   <span>
                     <span className="block text-sm font-semibold">{client.name}</span>
                     <span className="mt-0.5 block text-xs text-zinc-500">
-                      {[client.phone, client.email].filter(Boolean).join(" - ") || "Sem contato"}
+                      {[client.phone, client.email, client.vehicle_plate]
+                        .filter(Boolean)
+                        .join(" - ") || "Sem contato"}
                     </span>
                   </span>
                   {String(client.id) === String(movement.clientId) ? (
@@ -355,7 +357,7 @@ export function CashDayClient({ clients, initialData, date }) {
                   <option value="">Sem cliente</option>
                   {clients.map((client) => (
                     <option key={client.id} value={client.id}>
-                      {client.name}
+                      {[client.name, client.vehicle_plate].filter(Boolean).join(" - ")}
                     </option>
                   ))}
                 </select>
@@ -693,7 +695,8 @@ export function CashDayClient({ clients, initialData, date }) {
                     <span className="block truncate">{item.description}</span>
                   </td>
                   <td className="px-5 py-4 text-zinc-500">
-                    {item.client_name || "-"}
+                    {[item.client_name, item.client_vehicle_plate].filter(Boolean).join(" - ") ||
+                      "-"}
                   </td>
                   <td className="px-5 py-4">
                     <span className={paymentStatusBadgeClass(item.payment_status)}>

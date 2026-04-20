@@ -71,7 +71,8 @@ export function PendingPaymentsClient({ initialPending }) {
                   {formatDate(item.occurred_at)}
                 </td>
                 <td className="px-5 py-4 font-medium text-zinc-950">
-                  {item.client_name || "-"}
+                  {[item.client_name, item.client_vehicle_plate].filter(Boolean).join(" - ") ||
+                    "-"}
                 </td>
                 <td className="max-w-[360px] px-5 py-4">
                   <span className="block truncate">{item.description}</span>
